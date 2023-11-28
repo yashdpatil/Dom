@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Like</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "gilroy";
+      }
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+      body {
+        background-color: lightseagreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #container {
+        height: 400px;
+        width: 350px;
+        position: relative;
+        border-radius: 10px;
+        background-color: #fff;
+        overflow: hidden;
+      }
+      #container #img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: top;
+      }
+      #container #svg{
+        color: #fff;
+        font-size: 70px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%) scale(1.6);
+        opacity: 0;
+        transition: transform ease 0.3s;
+        /* mix-blend-mode: difference;  fo r cursor*/  
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <img
+        id="img"
+        src="https://images.unsplash.com/photo-1701084412727-1f3e01088a5f?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHx8"
+        alt=""
+      />
+      <img src="./heart-line.svg" alt="" id="svg" />
+    </div>
+
+    <script>
+var con = document.querySelector("#container")
+var love = document.querySelector("#svg")
+con.addEventListener("dblclick",function () {
+    love.style.transform ='translate(-50%,-50%) scale(2)'
+    love.style.opacity =0.5
+    
+    setTimeout(function(){
+        love.style.opacity =0;
+
+},2000)
+
+
+
+
+    setTimeout(function(){
+        love.style.transform ='translate(-50%,-50%) scale(0)'
+
+},1000)
+})
+
+
+    </script>
+  </body>
+</html>

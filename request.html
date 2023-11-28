@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'gilroy';
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color:cornflowerblue;
+        }
+        #card{
+            height: 400px;
+            width: 300px;
+            padding: 30px ;
+            background-color: #fff;
+            text-align: center;
+
+        }
+        #card img{
+            height: 60%;
+            width: 75%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+
+        #card h1{
+           font-size: 25px; 
+           margin: 10px 0;
+           font-weight: 800;
+        }
+        #card h5{
+            font-size: 25px;
+            color: red;
+            margin: 25px;
+        }
+        #card button{
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 50px;
+            border-radius: 5px;
+            border: none;
+            margin: 2px;
+            cursor: pointer;
+        }
+        #card #remove{
+            background-color: #dadada;
+            color: black;
+
+        }
+
+    </Style>
+</head>
+<body>
+    
+    <div id="card" >
+       
+        <img src="https://i.ytimg.com/vi/suAR1PYFNYA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBD5eZrWQWaD6J5m_-bAweZf26w9w" alt="">
+        <h1>dua</h1>
+        <h5>Stranger</h5>
+        <div id="btn-container">
+            <button id="add"> Add Friend</button>
+            <!-- <button id ="remove"> Remove</button> -->
+            
+        </div>
+    </div>
+
+
+    <script>
+       var a = document.querySelector("h5")
+       var btn = document.querySelector("#add")
+       var removes =document.querySelector("#remove")
+       var flag =0;
+        btn.addEventListener("click",function () {
+            if(flag==0){
+            a.innerHTML = "Friends"
+            a.style.color = "green"
+            btn.innerHTML="Remove Friend"
+            btn.style.backgroundColor = "grey"
+            flag =1;
+            }else{
+                a.innerHTML = "Stranger"
+            a.style.color = "red"
+            btn.style.backgroundColor = "green"
+            btn.innerHTML="Add Friend"
+             flag =0;
+            }
+            //  flag =1;
+            
+         })
+        // removes.addEventListener("click",function(){
+        //     a.innerHTML = "Stranger"
+        //     a.style.color = "red"
+        // })
+
+
+    </script>
+    
+</body>
+</html>
